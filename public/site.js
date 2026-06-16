@@ -51,7 +51,7 @@ function renderJob(job) {
   const reflection = job.reflection
     ? `<section><h4>Reflection</h4><blockquote>"${job.reflection}"</blockquote></section>`
     : "";
-  const responsibilities = `<section><h4>Responsibilities</h4>${listItems(job.details, wrapBrackets)}</section>`;
+  const responsibilities = `<section><h4>What I took from it</h4>${listItems(job.details, wrapBrackets)}</section>`;
   const skills = `<section><h4>Skills</h4><p class="skills">${job.skills.map((s) => `<code>${s}</code>`).join(SEP)}</p></section>`;
 
   return `
@@ -119,12 +119,4 @@ function renderInterests(interests) {
         </article>`,
     )
     .join("")}</div>`;
-}
-
-function collectSkills(data) {
-  const seen = new Set();
-  for (const job of data.work) {
-    for (const s of job.skills) seen.add(s);
-  }
-  return Array.from(seen);
 }

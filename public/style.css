@@ -1,71 +1,34 @@
-/* Adwaita Sans */
-@font-face {
-    font-family: "Adwaita Sans";
-    src: url("fonts/AdwaitaSans-Regular.ttf") format("truetype");
-    font-weight: 100 900;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Adwaita Sans";
-    src: url("fonts/AdwaitaSans-Italic.ttf") format("truetype");
-    font-weight: 100 900;
-    font-style: italic;
-}
-
-/* Adwaita Mono */
-@font-face {
-    font-family: "Adwaita Mono";
-    src: url("fonts/AdwaitaMono-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Adwaita Mono";
-    src: url("fonts/AdwaitaMono-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Adwaita Mono";
-    src: url("fonts/AdwaitaMono-Italic.ttf") format("truetype");
-    font-weight: normal;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Adwaita Mono";
-    src: url("fonts/AdwaitaMono-BoldItalic.ttf") format("truetype");
-    font-weight: bold;
-    font-style: italic;
-}
-
-/* Ayu Dark */
+/* One Dark */
 :root {
     color-scheme: light dark;
-    --bg: #0b0e14;
-    --surface: #0d1017;
-    --fg: #bfbdb6;
-    --fg-muted: #7a828a;
-    --accent: #e6b450;
-    --border: #2b3039;
-    --string: #aad94c;
-    --link: #39bae6;
-    --accent2: #d2a6ff;
-    --accent3: #ff8f40;
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Consolas,
+        "Liberation Mono", monospace;
+    --bg: #282c33;
+    --surface: #2f343e;
+    --fg: #dce0e5;
+    --fg-muted: #a9afbc;
+    --accent: #dfc184;
+    --border: #464b57;
+    --string: #a1c181;
+    --link: #74ade8;
+    --accent2: #b477cf;
+    --accent3: #bf956a;
 }
 
-/* Ayu Light */
+/* One Light */
 @media (prefers-color-scheme: light) {
     :root {
         --bg: #fafafa;
-        --surface: #f0f0f0;
-        --fg: #575f66;
-        --fg-muted: #6b7380;
-        --accent: #ff9940;
-        --border: #d8d8d7;
-        --string: #86b300;
-        --link: #399ee6;
-        --accent2: #a37acc;
-        --accent3: #ed9366;
+        --surface: #ebebec;
+        --fg: #242529;
+        --fg-muted: #58585a;
+        --accent: #c18401;
+        --border: #c9c9ca;
+        --string: #649f57;
+        --link: #5c78e2;
+        --accent2: #a449ab;
+        --accent3: #ad6e25;
     }
 }
 
@@ -80,22 +43,29 @@ html {
 }
 
 body {
-    font-family: "Adwaita Sans", sans-serif;
+    font-family: var(--font-sans);
     background: var(--bg);
     color: var(--fg);
-    margin: 0 auto;
+    margin: 0;
     padding: 0 2rem 25vh 2rem;
-    max-width: calc(210mm + 4rem);
     line-height: 1.5;
+}
+
+/* Cap flowing content to a readable A4 measure; headings stay full width */
+p,
+li,
+blockquote,
+pre {
+    max-width: 210mm;
 }
 
 a {
     color: var(--link);
-    font-family: "Adwaita Mono", monospace;
+    font-family: var(--font-mono);
 }
 
 code {
-    font-family: "Adwaita Mono", monospace;
+    font-family: var(--font-mono);
     color: var(--string);
     background: var(--surface);
     border: 1px solid var(--border);
@@ -285,13 +255,13 @@ nav a[aria-current="page"] {
 .toc li::before {
     content: "0" counter(toc) ".  ";
     color: var(--fg-muted);
-    font-family: "Adwaita Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.9em;
 }
 
 .toc a {
     color: var(--fg-muted);
-    font-family: "Adwaita Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.9em;
 }
 

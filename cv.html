@@ -5,9 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="color-scheme" content="light dark" />
         <title>CV - Harrison Cook</title>
+        <meta
+            name="description"
+            content="The CV of Harrison Cook, Lead Software Engineer - work history, education, skills, and interests. Print or save as PDF."
+        />
+        <meta name="author" content="Harrison Cook" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:site_name" content="Harrison Cook" />
+        <meta property="og:title" content="CV - Harrison Cook" />
+        <meta
+            property="og:description"
+            content="The CV of Harrison Cook, Lead Software Engineer - work history, education, skills, and interests."
+        />
+        <meta property="og:url" content="https://honsoncooky.github.io/cookbook/cv.html" />
+        <meta property="og:image" content="https://honsoncooky.github.io/cookbook/public/images/profile.png" />
+        <meta name="twitter:card" content="summary" />
         <link rel="icon" type="image/png" href="public/images/favicon.png" />
         <link rel="stylesheet" href="public/style.css" />
-        <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css" />
         <style>
             @page {
                 size: A4 portrait;
@@ -15,7 +29,7 @@
             }
 
             .cv-page {
-                font-family: "Adwaita Sans", sans-serif;
+                font-family: var(--font-sans);
                 font-size: 10pt;
                 line-height: 1.4;
                 color: var(--fg);
@@ -25,7 +39,7 @@
                 max-height: 297mm;
                 overflow: visible;
                 padding: 1.5cm;
-                margin: 1.5rem auto;
+                margin: 1.5rem 0;
                 border: 1px solid var(--border);
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
                 display: flex;
@@ -143,15 +157,17 @@
 
             .cv-contact a {
                 color: var(--fg-muted);
-                font-family: "Adwaita Sans", sans-serif;
+                font-family: var(--font-sans);
                 text-decoration: none;
                 display: flex;
-                align-items: baseline;
+                align-items: center;
             }
 
-            .cv-contact a i {
-                margin-right: 1ch;
-                font-size: 1.25em;
+            .cv-contact a svg {
+                width: 1.1em;
+                height: 1.1em;
+                margin-right: 0.6ch;
+                flex-shrink: 0;
             }
 
             .cv-page .summary {
@@ -162,6 +178,17 @@
                 color: var(--fg-muted);
                 font-size: 0.9em;
                 margin-bottom: 1rem;
+            }
+
+            .cv-hint button {
+                font: inherit;
+                font-family: var(--font-mono);
+                color: var(--link);
+                background: none;
+                border: none;
+                padding: 0;
+                text-decoration: underline;
+                cursor: pointer;
             }
 
             @media print {
@@ -217,7 +244,7 @@
 
         <div class="page-header">
             <h1>CV</h1>
-            <p class="cv-hint"><a href="javascript:window.print()">Print / Save as PDF</a></p>
+            <p class="cv-hint"><button type="button" id="cv-print">Print / Save as PDF</button></p>
         </div>
 
         <div class="cv-wrapper">
@@ -232,7 +259,7 @@
                     Growing up in a family obsessed with music and theatre, I spent years on stage before calculus and
                     physics completely hijacked my life plan - the result is a wild mix of showman and nerd. These days
                     I'm leading backend development in Go, helping bring ambitious multiplayer game ideas to life.
-                    Outside of work, I've been exploring AI-enhanced workflows in low-level environments (C, Rust), and
+                    Outside of work, I've been exploring AI-enhanced workflows in low-level environments with Rust, and
                     how shifting per-person capability limits change what one person can credibly own.
                 </p>
 
@@ -258,18 +285,21 @@
 
         <script src="public/site.js" data-root="."></script>
         <script>
+            document.querySelector("#cv-print")?.addEventListener("click", () => window.print());
+
             loadData().then((data) => {
                 // Contact
                 const c = data.contact;
+                const ICONS = {
+                    github:
+                        '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>',
+                    linkedin:
+                        '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>',
+                };
                 const links = [];
-                if (c.github)
-                    links.push(
-                        `<a href="${c.github}"><i class="nf nf-md-github"></i>${c.github.replace("https://", "")}</a>`,
-                    );
+                if (c.github) links.push(`<a href="${c.github}">${ICONS.github}${c.github.replace("https://", "")}</a>`);
                 if (c.linkedin)
-                    links.push(
-                        `<a href="${c.linkedin}"><i class="nf nf-md-linkedin"></i>${c.linkedin.replace("https://www.", "")}</a>`,
-                    );
+                    links.push(`<a href="${c.linkedin}">${ICONS.linkedin}${c.linkedin.replace("https://www.", "")}</a>`);
                 document.querySelector("#cv-contact").innerHTML = links.join("");
 
                 const workHtml = data.work
@@ -287,6 +317,7 @@
                 document.querySelector("#cv-work").innerHTML += workHtml;
 
                 const eduHtml = data.education
+                    .slice(0, 1)
                     .map((edu, i) => {
                         const extras = [];
                         if (edu.major) extras.push(`Major: ${edu.major}`);
@@ -305,12 +336,13 @@
                 document.querySelector("#cv-education").innerHTML += eduHtml;
 
                 const cats = Object.entries(data.skillCategories).slice(0, 4);
-                const skillsHtml = `<div class="cv-skills-table">
-                    <span class="label">${cats[0][0]}:</span><span>${cats[0][1].join(SEP)}</span>
-                    <span class="label gap">${cats[1][0]}:</span><span>${cats[1][1].join(SEP)}</span>
-                    <span class="label">${cats[2][0]}:</span><span>${cats[2][1].join(SEP)}</span>
-                    <span class="label gap">${cats[3][0]}:</span><span>${cats[3][1].join(SEP)}</span>
-                </div>`;
+                const skillsHtml = `<div class="cv-skills-table">${cats
+                    .map(([name, items], i) => {
+                        // odd index sits in the second column pair, which needs the leading gap
+                        const cls = i % 2 === 1 ? "label gap" : "label";
+                        return `<span class="${cls}">${name}:</span><span>${items.join(SEP)}</span>`;
+                    })
+                    .join("")}</div>`;
                 document.querySelector("#cv-skills").innerHTML += skillsHtml;
 
                 const intHtml = `<div class="cv-interests-table">${data.interests
