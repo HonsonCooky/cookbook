@@ -17,8 +17,14 @@
             property="og:description"
             content="The CV of Harrison Cook, Lead Software Engineer - work history, education, skills, and interests."
         />
-        <meta property="og:url" content="https://honsoncooky.github.io/cookbook/cv.html" />
-        <meta property="og:image" content="https://honsoncooky.github.io/cookbook/public/images/profile.png" />
+        <meta
+            property="og:url"
+            content="https://honsoncooky.github.io/cookbook/cv.html"
+        />
+        <meta
+            property="og:image"
+            content="https://honsoncooky.github.io/cookbook/public/images/profile.png"
+        />
         <meta name="twitter:card" content="summary" />
         <link rel="icon" type="image/png" href="public/images/favicon.png" />
         <link rel="stylesheet" href="public/style.css" />
@@ -39,7 +45,7 @@
                 max-height: 297mm;
                 overflow: visible;
                 padding: 1.5cm;
-                margin: 1.5rem 0;
+                margin: 0 0 1.5rem 0;
                 border: 1px solid var(--border);
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
                 display: flex;
@@ -96,6 +102,11 @@
                 margin: 0.5em 0 0.1em 0;
             }
 
+            /* Separate consecutive entries (job-to-job, qualification-to-qualification) */
+            .cv-page ul + h3 {
+                margin-top: 1.4em;
+            }
+
             .cv-page .meta {
                 font-size: 9pt;
                 color: var(--fg-muted);
@@ -103,8 +114,8 @@
             }
 
             .cv-page ul {
-                list-style: "- " inside;
-                padding-left: 0;
+                list-style: "• " outside;
+                padding-left: 1.2ch;
                 margin: 0.2em 0;
             }
 
@@ -244,7 +255,9 @@
 
         <div class="page-header">
             <h1>CV</h1>
-            <p class="cv-hint"><button type="button" id="cv-print">Print / Save as PDF</button></p>
+            <p class="cv-hint">
+                <button type="button" id="cv-print">Print / Save as PDF</button>
+            </p>
         </div>
 
         <div class="cv-wrapper">
@@ -256,11 +269,15 @@
                 </div>
                 <p class="cv-contact" id="cv-contact"></p>
                 <p class="summary">
-                    Growing up in a family obsessed with music and theatre, I spent years on stage before calculus and
-                    physics completely hijacked my life plan - the result is a wild mix of showman and nerd. These days
-                    I'm leading backend development in Go, helping bring ambitious multiplayer game ideas to life.
-                    Outside of work, I've been exploring AI-enhanced workflows in low-level environments with Rust, and
-                    how shifting per-person capability limits change what one person can credibly own.
+                    Growing up in a family obsessed with music and theatre, I
+                    spent years on stage before calculus and physics completely
+                    hijacked my life plan - the result is a wild mix of showman
+                    and nerd. These days I'm leading backend development in Go,
+                    helping bring ambitious multiplayer game ideas to life.
+                    Outside of work, I've been exploring AI-enhanced workflows
+                    in low-level environments with Rust, and how shifting
+                    per-person capability limits change what one person can
+                    credibly own.
                 </p>
 
                 <div class="cv-body">
@@ -285,22 +302,29 @@
 
         <script src="public/site.js" data-root="."></script>
         <script>
-            document.querySelector("#cv-print")?.addEventListener("click", () => window.print());
+            document
+                .querySelector("#cv-print")
+                ?.addEventListener("click", () => window.print());
 
             loadData().then((data) => {
                 // Contact
                 const c = data.contact;
                 const ICONS = {
-                    github:
-                        '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>',
+                    github: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>',
                     linkedin:
                         '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>',
                 };
                 const links = [];
-                if (c.github) links.push(`<a href="${c.github}">${ICONS.github}${c.github.replace("https://", "")}</a>`);
+                if (c.github)
+                    links.push(
+                        `<a href="${c.github}">${ICONS.github}${c.github.replace("https://", "")}</a>`,
+                    );
                 if (c.linkedin)
-                    links.push(`<a href="${c.linkedin}">${ICONS.linkedin}${c.linkedin.replace("https://www.", "")}</a>`);
-                document.querySelector("#cv-contact").innerHTML = links.join("");
+                    links.push(
+                        `<a href="${c.linkedin}">${ICONS.linkedin}${c.linkedin.replace("https://www.", "")}</a>`,
+                    );
+                document.querySelector("#cv-contact").innerHTML =
+                    links.join("");
 
                 const workHtml = data.work
                     .slice(0, 3)
@@ -321,7 +345,10 @@
                     .map((edu, i) => {
                         const extras = [];
                         if (edu.major) extras.push(`Major: ${edu.major}`);
-                        if (edu.specialisation) extras.push(`Specialisation: ${edu.specialisation}`);
+                        if (edu.specialisation)
+                            extras.push(
+                                `Specialisation: ${edu.specialisation}`,
+                            );
                         const all = [...extras, ...edu.details];
                         const limit = i === 0 ? 3 : 1;
                         return `
@@ -347,7 +374,10 @@
 
                 const intHtml = `<div class="cv-interests-table">${data.interests
                     .slice(0, 3)
-                    .map((i) => `<span class="label">${i.name}:</span><span>${i.cvSummary || i.summary}</span>`)
+                    .map(
+                        (i) =>
+                            `<span class="label">${i.name}:</span><span>${i.cvSummary || i.summary}</span>`,
+                    )
                     .join("")}</div>`;
                 document.querySelector("#cv-interests").innerHTML += intHtml;
             });

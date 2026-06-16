@@ -6,11 +6,12 @@
       "start": "Sept 2025",
       "end": null,
       "location": "Remote, NZ",
-      "reflection": "Getting to lead backend development has been genuinely exciting - it's given me the space to implement approaches I've long believed in, and to focus on the engineering rather than the logistics around it. Designing the architecture from scratch to help bring ambitious game ideas to life is exactly the kind of challenge I didn't know I'd love as much as I do.",
+      "reflection": "I care far more about what a team can build together than about anything I could ship alone - it's a conviction I hold strongly. So even while I was the only engineer here for a while, every decision I made assumed the team we were going to become; as that team grew, the groundwork paid off.",
       "details": [
-        "I design the backend in Go for what a small team can actually carry, not for the cleverest possible solution.",
-        "Made the call to move our whole platform onto Railway: the lesson that stuck wasn't about tooling, it was that the right constraint to design around is almost always the team, not the technology.",
-        "I direct and verify AI rather than hand-write code, which forces me to know exactly what correct looks like before I can trust the output."
+        "Short-term wins drive every piece of work, but I make sure the team's velocity is always spent with the long-term in view - the two are only a trade-off if you let them be.",
+        "Through small, persistent steps I delivered internal tooling that hadn't been thought possible - a long-term bet that paid off precisely because I kept carving room for it inside the short-term grind.",
+        "We moved onto Railway early, a call I made against the obvious default, and it drove the lesson home: the constraint worth designing around is almost never the technology, it's the team behind it.",
+        "I build by directing and interrogating AI rather than writing code by hand - a way of working that only earns its keep because I hold every line to a bar I can fully define and verify."
       ],
       "skills": ["Go", "Docker", "Railway", "Postgres", "Redis", "MongoDB", "Luau", "React", "Claude"]
     },
@@ -20,11 +21,11 @@
       "start": "Aug 2024",
       "end": "Sept 2025",
       "location": "Wellington, NZ",
-      "reflection": "Xero was my first real encounter with truly untouched legacy systems - battle-tested software that had been quietly running for years with nobody daring to go near it. Learning to extend those systems carefully, gradually threading new functionality into old foundations without disturbing what already worked, taught me a kind of patience and precision I hadn't needed before.",
+      "reflection": "Xero was my first encounter with genuinely untouched legacy - battle-tested software so load-bearing it had run quietly for years, rightly treated as untouchable. Threading new behaviour through those old foundations without disturbing what already worked forced a patience and precision I'd never had to develop.",
       "details": [
-        "Extending undocumented C# and IIS systems nobody wanted to touch taught me to change code I didn't write without breaking what was quietly depending on it.",
-        "Helped design the modern .NET replacement while the legacy platform kept running - I learned how much risk really lives in a migration.",
-        "Being on-call for incidents well outside my own squad's scope made me comfortable reasoning about unfamiliar systems under real pressure."
+        "Working deep in undocumented C# and IIS, reverse-engineering intent straight from the code, is what left me genuinely unafraid to change software I didn't write.",
+        "I helped architect the modern .NET replacement while the legacy system stayed live underneath it - holding both in my head at once taught me exactly how much risk hides inside a migration.",
+        "Carrying production on-call for systems well beyond my own squad is the fastest way I know to get fluent at reasoning about unfamiliar code while it's still on fire."
       ],
       "skills": ["C#", "IIS", "AWS", "DevOps"]
     },
@@ -34,10 +35,10 @@
       "start": "Nov 2021",
       "end": "Aug 2024",
       "location": "Wellington, NZ",
-      "reflection": "Coming out of university into the corporate world was a real adjustment - and honestly, a great one - learning to connect what I was building to business outcomes completely changed how I think about code. It shifted my whole frame from 'what's the clever solution' to 'what actually helps' - a perspective shift that was genuinely hard to align with at first.",
+      "reflection": "University trained me to chase the clever solution; Z Energy retrained me to chase the useful one. Tying what I built to real business outcomes rewired how I think about code - and that shift was harder to accept than any technical problem I faced there.",
       "details": [
-        "My first role out of university, in a TypeScript microservices ecosystem across a team of 10-20 - where I learned the difference between code that works and code that fits a team, and started writing for the second.",
-        "Building integrations with third-party vendors and legacy platforms taught me that the messy, real-world constraints usually are the engineering problem, not a distraction from it."
+        "My first role out of university, inside a distributed TypeScript microservices estate run by a team of 10-20 - where the gap between code that works and code a team can live with stopped being theoretical.",
+        "Building integrations across third-party vendors and legacy platforms is where messy, real-world constraints stopped reading as noise to me and started reading as the actual engineering problem."
       ],
       "skills": ["TypeScript", "Azure", "DevOps", "\"Microsoft-Shop\""]
     },
@@ -47,9 +48,9 @@
       "start": "Nov 2020",
       "end": "Feb 2021",
       "location": "Wellington, NZ",
-      "reflection": "Raygun was my first real look at production software outside of university - building a developer-facing crash reporting library exposed me to a world of decisions and constraints I hadn't encountered before. Without the business perspective I'd develop later, a lot of the decision making was hard to follow at this time, but seeing how software actually lived and breathed outside of academia was fascinating.",
+      "reflection": "Raygun was my first look at software as it actually lives outside a lecture hall. Helping build a developer-facing library surfaced a whole layer of decisions I had no framework for yet - I couldn't always follow the why, but watching real software breathe under real load was the moment academia stopped being enough.",
       "details": [
-        "Designed and shipped raygun4reactnative, a published React Native library for crash reporting and real-user monitoring - my first time building something other developers would actually depend on."
+        "Built and shipped raygun4reactnative with another intern, under senior direction - a published React Native library for crash reporting and real-user monitoring, and my first real taste of work that gets depended on instead of graded."
       ],
       "skills": ["React Native", "JavaScript"]
     }
@@ -103,7 +104,7 @@
     }
   ],
   "skillCategories": {
-    "Lang": ["Go", "Rust", "C", "Luau", "C#", "JavaScript"],
+    "Lang": ["Go", "Rust", "C", "Luau", "C#", "TypeScript"],
     "Infra": ["Railway", "Docker", "AWS", "Azure"],
     "Data": ["Postgres", "Redis", "MongoDB"],
     "AI": ["Claude", "Gemini"]
