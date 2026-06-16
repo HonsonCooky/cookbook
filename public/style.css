@@ -1,9 +1,13 @@
 /* One Dark */
 :root {
     color-scheme: light dark;
-    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Consolas,
-        "Liberation Mono", monospace;
+    --font-sans:
+        system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        sans-serif;
+    --font-mono:
+        ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono",
+        "Segoe UI Mono", "Roboto Mono", Menlo, Consolas, "Liberation Mono",
+        monospace;
     --bg: #282c33;
     --surface: #2f343e;
     --fg: #dce0e5;
@@ -48,15 +52,8 @@ body {
     color: var(--fg);
     margin: 0;
     padding: 0 2rem 25vh 2rem;
+    max-width: calc(210mm + 4rem);
     line-height: 1.5;
-}
-
-/* Cap flowing content to a readable A4 measure; headings stay full width */
-p,
-li,
-blockquote,
-pre {
-    max-width: 210mm;
 }
 
 a {
@@ -94,6 +91,11 @@ pre code {
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
+}
+
+/* Let the name/title column fill the row so the subtitle underline spans full width */
+.hero > div {
+    flex: 1;
 }
 
 .profile {
@@ -198,8 +200,8 @@ article section h4 {
 }
 
 ul {
-    list-style: "- " inside;
-    padding-left: 0;
+    list-style: "• " outside;
+    padding-left: 1.2ch;
     margin: 0 0 0.2em 0;
 }
 
@@ -227,7 +229,7 @@ nav a[aria-current="page"] {
 }
 
 .page-header {
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .page-header h1 {
