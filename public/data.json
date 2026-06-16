@@ -8,11 +8,11 @@
       "location": "Remote, NZ",
       "reflection": "Getting to lead backend development has been genuinely exciting - it's given me the space to implement approaches I've long believed in, and to focus on the engineering rather than the logistics around it. Designing the architecture from scratch to help bring ambitious game ideas to life is exactly the kind of challenge I didn't know I'd love as much as I do.",
       "details": [
-        "Leading the backend effort, building Go services focused on keeping things simple, scalable, and manageable by a small team.",
-        "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
-        "Working with an AI-assisted development workflow - not generating code blindly, but using AI as a thinking partner alongside my own judgement."
+        "I design the backend in Go for what a small team can actually carry, not for the cleverest possible solution.",
+        "Made the call to move our whole platform onto Railway: the lesson that stuck wasn't about tooling, it was that the right constraint to design around is almost always the team, not the technology.",
+        "I direct and verify AI rather than hand-write code, which forces me to know exactly what correct looks like before I can trust the output."
       ],
-      "skills": ["Go", "Railway", "Lua", "Roblox Studio", "AWS", "DevOps", "Claude"]
+      "skills": ["Go", "Docker", "Railway", "Postgres", "Redis", "MongoDB", "Luau", "React", "Claude"]
     },
     {
       "company": "Xero",
@@ -22,9 +22,9 @@
       "location": "Wellington, NZ",
       "reflection": "Xero was my first real encounter with truly untouched legacy systems - battle-tested software that had been quietly running for years with nobody daring to go near it. Learning to extend those systems carefully, gradually threading new functionality into old foundations without disturbing what already worked, taught me a kind of patience and precision I hadn't needed before.",
       "details": [
-        "Maintained and extended legacy IIS applications in C#, reverse-engineering undocumented workflows to ship features without breaking things.",
-        "Helped design the replacement platform in modern .NET while keeping the legacy system running.",
-        "On-call for production incidents across systems outside my squad's scope."
+        "Extending undocumented C# and IIS systems nobody wanted to touch taught me to change code I didn't write without breaking what was quietly depending on it.",
+        "Helped design the modern .NET replacement while the legacy platform kept running - I learned how much risk really lives in a migration.",
+        "Being on-call for incidents well outside my own squad's scope made me comfortable reasoning about unfamiliar systems under real pressure."
       ],
       "skills": ["C#", "IIS", "AWS", "DevOps"]
     },
@@ -36,8 +36,8 @@
       "location": "Wellington, NZ",
       "reflection": "Coming out of university into the corporate world was a real adjustment - and honestly, a great one - learning to connect what I was building to business outcomes completely changed how I think about code. It shifted my whole frame from 'what's the clever solution' to 'what actually helps' - a perspective shift that was genuinely hard to align with at first.",
       "details": [
-        "Maintained a distributed TypeScript microservices ecosystem across a team of 10-20 developers.",
-        "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets."
+        "My first role out of university, in a TypeScript microservices ecosystem across a team of 10-20 - where I learned the difference between code that works and code that fits a team, and started writing for the second.",
+        "Building integrations with third-party vendors and legacy platforms taught me that the messy, real-world constraints usually are the engineering problem, not a distraction from it."
       ],
       "skills": ["TypeScript", "Azure", "DevOps", "\"Microsoft-Shop\""]
     },
@@ -49,10 +49,9 @@
       "location": "Wellington, NZ",
       "reflection": "Raygun was my first real look at production software outside of university - building a developer-facing crash reporting library exposed me to a world of decisions and constraints I hadn't encountered before. Without the business perspective I'd develop later, a lot of the decision making was hard to follow at this time, but seeing how software actually lived and breathed outside of academia was fascinating.",
       "details": [
-        "Designed, developed, and published raygun4reactnative - a React Native library for crash reporting and real-user monitoring."
+        "Designed and shipped raygun4reactnative, a published React Native library for crash reporting and real-user monitoring - my first time building something other developers would actually depend on."
       ],
-      "skills": ["React Native", "JavaScript"],
-      "link": "https://www.npmjs.com/package/raygun4reactnative"
+      "skills": ["React Native", "JavaScript"]
     }
   ],
   "education": [
@@ -104,14 +103,13 @@
     }
   ],
   "skillCategories": {
-    "Lang": ["Go", "C", "Lua", "C#", "JavaScript"],
-    "DevOps": ["Terraform", "GitHub Actions"],
-    "Infra": ["AWS", "Azure", "Railway", "Docker"],
+    "Lang": ["Go", "Rust", "C", "Luau", "C#", "JavaScript"],
+    "Infra": ["Railway", "Docker", "AWS", "Azure"],
+    "Data": ["Postgres", "Redis", "MongoDB"],
     "AI": ["Claude", "Gemini"]
   },
   "contact": {
     "github": "https://github.com/HonsonCooky",
     "linkedin": "https://www.linkedin.com/in/honsoncooky"
-  },
-  "references": []
+  }
 }
