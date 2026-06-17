@@ -216,11 +216,23 @@ nav {
     padding: 1rem 0 0.75rem 0;
     margin-bottom: 2.5rem;
     z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 1em;
 }
 
 nav a {
-    margin-right: 1em;
     color: var(--fg-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    text-decoration: none;
+}
+
+nav a svg {
+    width: 1.1em;
+    height: 1.1em;
 }
 
 nav a:hover,

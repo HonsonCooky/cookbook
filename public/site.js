@@ -2,11 +2,29 @@ const SEP = " :: ";
 
 const ROOT = document.currentScript?.dataset.root ?? ".";
 
+// Icons are inline Feather/Lucide line paths (no external dependency); they
+// inherit the nav colour via currentColor, like the CV contact icons.
 const NAV_LINKS = [
-  { href: `${ROOT}/`, label: "home" },
-  { href: `${ROOT}/history.html`, label: "history" },
-  { href: `${ROOT}/blogs/`, label: "blogs" },
-  { href: `${ROOT}/cv.html`, label: "cv" },
+  {
+    href: `${ROOT}/`,
+    label: "Home",
+    icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  },
+  {
+    href: `${ROOT}/history.html`,
+    label: "History",
+    icon: '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/>',
+  },
+  {
+    href: `${ROOT}/blogs/`,
+    label: "Blogs",
+    icon: '<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>',
+  },
+  {
+    href: `${ROOT}/cv.html`,
+    label: "CV",
+    icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>',
+  },
 ];
 
 function renderNav() {
@@ -17,7 +35,8 @@ function renderNav() {
   nav.innerHTML = NAV_LINKS.map((link) => {
     const linkPath = new URL(link.href, document.baseURI).pathname;
     const current = path === linkPath || (linkPath !== homePath && path.startsWith(linkPath));
-    return `<a href="${link.href}"${current ? ' aria-current="page"' : ""}>${link.label}</a>`;
+    const icon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${link.icon}</svg>`;
+    return `<a href="${link.href}"${current ? ' aria-current="page"' : ""}>${icon}${link.label}</a>`;
   }).join("");
   nav.querySelectorAll('a[aria-current="page"]').forEach((a) => {
     if (new URL(a.href).pathname !== path) return;
