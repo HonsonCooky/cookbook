@@ -1,4 +1,4 @@
-/* One Dark */
+/* One Dark (reduced palette) */
 :root {
     color-scheme: light dark;
     --font-sans:
@@ -12,12 +12,19 @@
     --surface: #2f343e;
     --fg: #dce0e5;
     --fg-muted: #a9afbc;
-    --accent: #dfc184;
     --border: #464b57;
     --string: #a1c181;
     --link: #74ade8;
-    --accent2: #b477cf;
-    --accent3: #bf956a;
+
+    /* Vertical rhythm on a baseline grid: the base unit is the body line-height
+       (1.5 x 16px = 24px), and every gap is a whole multiple of it, so spacing
+       follows one scale instead of hand-picked values. Section : entry stays 2 : 1. */
+    --space-unit: 1.5rem;                          /* 24px - the baseline */
+    --space-tight: calc(var(--space-unit) / 2);    /* 12px - within a group */
+    --space-block: var(--space-unit);              /* 24px - paragraphs, lists */
+    --space-heading: var(--space-unit);            /* 24px - heading to its body */
+    --space-entry: calc(var(--space-unit) * 3);    /* 72px - between entries */
+    --space-section: calc(var(--space-unit) * 6);  /* 144px - between sections */
 }
 
 /* One Light */
@@ -27,12 +34,9 @@
         --surface: #ebebec;
         --fg: #242529;
         --fg-muted: #58585a;
-        --accent: #c18401;
         --border: #c9c9ca;
         --string: #649f57;
         --link: #5c78e2;
-        --accent2: #a449ab;
-        --accent3: #ad6e25;
     }
 }
 
@@ -86,16 +90,71 @@ pre code {
     background: none;
 }
 
+p {
+    margin: 0 0 var(--space-block) 0;
+}
+
+small {
+    color: var(--fg-muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: calc(var(--space-entry) / 2) 0;
+}
+
+blockquote {
+    margin: var(--space-block) 0;
+    padding-left: 1em;
+    border-left: 2px solid var(--border);
+    color: var(--fg-muted);
+    font-style: italic;
+}
+
+ul {
+    list-style: "• " outside;
+    padding-left: 1.2ch;
+    margin: var(--space-block) 0;
+}
+
+li {
+    margin-bottom: var(--space-tight);
+}
+
+/* ---- link rows: under the hero name (home), and a single up-link at the top
+   of CV / blog pages ---- */
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-block);
+    margin: var(--space-tight) 0 0 0;
+}
+
+.nav-links a {
+    color: var(--fg-muted);
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--link);
+}
+
+/* the lone up-link sits at the very top of CV / blog pages */
+body > nav.nav-links {
+    margin: calc(var(--space-unit) * 2) 0 var(--space-heading) 0;
+}
+
+/* ---- hero ---- */
 .hero {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
-}
-
-/* Let the name/title column fill the row so the subtitle underline spans full width */
-.hero > div {
-    flex: 1;
+    gap: var(--space-block);
+    /* masthead sits close to its intro paragraph (2 units), not a section apart */
+    margin: calc(var(--space-unit) * 2) 0;
 }
 
 .profile {
@@ -108,22 +167,19 @@ pre code {
 }
 
 h1 {
-    color: var(--accent);
-    font-size: 2rem;
-    margin: 0 0 0.6em 0;
+    color: var(--fg);
+    margin: 0 0 var(--space-tight) 0;
 }
 
 .hero h1 {
     font-size: 2.5rem;
-    margin: 0;
     line-height: 1;
 }
 
-.hero h2 {
+.role {
     color: var(--fg-muted);
     font-size: 1.4rem;
     margin: 0;
-    line-height: 1;
 }
 
 @media (max-width: 480px) {
@@ -132,15 +188,19 @@ h1 {
         text-align: center;
     }
 
+    .nav-links {
+        justify-content: center;
+    }
+
     .profile {
         width: 200px;
         height: 200px;
     }
 }
 
+/* ---- sections: content-sized, generous chapter-style gaps between them ---- */
 body > section {
-    margin-bottom: 6rem;
-    scroll-margin-top: 3rem;
+    margin-bottom: var(--space-section);
 }
 
 body > section:last-child {
@@ -148,143 +208,36 @@ body > section:last-child {
 }
 
 h2 {
-    color: var(--accent3);
-    margin: 0 0 2rem 0;
-    border-bottom: 3px solid var(--accent3);
-    padding-bottom: 0.15em;
+    color: var(--fg);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 0 var(--space-heading) 0;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.2em;
 }
 
 h3 {
-    margin: 0.25em 0 0 0;
+    margin: 0;
 }
 
-h4 {
-    color: var(--accent2);
-    font-size: 1em;
-    margin: 0.2em 0 0.1em 0;
+.meta {
+    color: var(--fg-muted);
+    font-size: 0.9em;
+    margin: 0 0 var(--space-tight) 0;
+}
+
+.skills {
+    color: var(--fg-muted);
+    font-size: 0.9em;
+    margin: var(--space-block) 0 0 0;
 }
 
 .label {
-    color: var(--accent2);
     font-weight: bold;
 }
 
-div:has(> .label) {
-    margin-bottom: 0.1em;
-}
-
-p {
-    margin: 0 0 0.6em 0;
-}
-
-small {
-    color: var(--fg-muted);
-}
-
-hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 1.25rem 0;
-}
-
-article {
-    margin-bottom: 0;
-}
-
-article section {
-    margin: 0.75em 0 0 0;
-}
-
-article section h4 {
-    margin: 0 0 0.2em 0;
-}
-
-ul {
-    list-style: "• " outside;
-    padding-left: 1.2ch;
-    margin: 0 0 0.2em 0;
-}
-
-li {
-    margin-bottom: 0.75em;
-}
-
-nav {
-    position: sticky;
-    top: 0;
-    background: var(--bg);
-    padding: 1rem 0 0.75rem 0;
-    margin-bottom: 2.5rem;
-    z-index: 10;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.4rem 1em;
-}
-
-nav a {
-    color: var(--fg-muted);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4em;
-    text-decoration: none;
-}
-
-nav a svg {
-    width: 1.1em;
-    height: 1.1em;
-}
-
-nav a:hover,
-nav a[aria-current="page"] {
-    color: var(--link);
-}
-
-.page-header {
-    margin-bottom: 1.5rem;
-}
-
-.page-header h1 {
-    margin: 0;
-}
-
-.page-header nav {
-    position: static;
-    padding: 0;
-    margin: 0;
-}
-
-.toc {
-    list-style: none;
-    padding: 0;
-    margin: 0.75rem 0 0 0;
-    counter-reset: toc;
-}
-
-.toc li {
-    counter-increment: toc;
-    margin-bottom: 0.2em;
-}
-
-.toc li::before {
-    content: "0" counter(toc) ".  ";
-    color: var(--fg-muted);
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-}
-
-.toc a {
-    color: var(--fg-muted);
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-}
-
-.toc a:hover {
-    color: var(--link);
-}
-
-.nowrap {
-    white-space: nowrap;
+details {
+    margin-top: var(--space-block);
 }
 
 details summary {
@@ -296,36 +249,46 @@ details summary:hover {
     color: var(--link);
 }
 
-.interests-list article {
-    margin-bottom: 0.75em;
+/* Entries are grouped by spacing, not dividers: the gap between entries is
+   larger than the gaps inside one, so proximity alone reads the relationship. */
+body > section article {
+    margin-bottom: var(--space-entry);
 }
 
-.interests-list article:last-child {
+body > section article:last-child {
     margin-bottom: 0;
 }
 
-blockquote {
-    margin: 0.2em 0;
+/* The first entry sits half an entry-gap below its heading (or intro) - the
+   heading already does some of the separating - while entries are a full
+   --space-entry apart. Only titled entries (article); heading-to-prose stays
+   tight (blog body, interests intro). */
+body > section article:first-of-type {
+    margin-top: calc(var(--space-entry) / 2);
 }
 
-.meta {
+/* ---- page header (CV, blog) ---- */
+.page-header {
+    margin-bottom: var(--space-heading);
+}
+
+.page-header h1 {
+    margin: 0;
+}
+
+.post-meta {
     color: var(--fg-muted);
     font-size: 0.9em;
-    margin: 0 0 0.25rem 0;
 }
 
-.skills {
-    margin: 0.25rem 0 0 0;
-}
-
-/* Blog */
+/* ---- blog list ---- */
 .post-list {
     list-style: none;
     padding: 0;
 }
 
 .post-list li {
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-tight);
 }
 
 .post-list a {
@@ -337,13 +300,19 @@ blockquote {
     display: block;
 }
 
-.post-meta {
-    color: var(--fg-muted);
-    font-size: 0.9em;
-}
-
 @media print {
-    nav {
+    .nav-links {
         display: none;
+    }
+
+    /* Viewport units are meaningless on paper; let each section begin a fresh
+       page - the print equivalent of a chapter. */
+    body > section {
+        margin-bottom: 0;
+        break-before: page;
+    }
+
+    body > section:first-of-type {
+        break-before: auto;
     }
 }
