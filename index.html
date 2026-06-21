@@ -7,15 +7,15 @@
         <title>Harrison Cook</title>
         <meta
             name="description"
-            content="Software engineer leading backend development at Splitting Point Studios. Working in Go, exploring AI-enhanced low-level workflows in Rust, and thinking about systems design."
+            content="Harrison Cook - software engineer leading backend development at Splitting Point Studios. Work history, education, and interests, with essays on how he thinks about building software."
         />
         <meta name="author" content="Harrison Cook" />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="profile" />
         <meta property="og:site_name" content="Harrison Cook" />
         <meta property="og:title" content="Harrison Cook - Software Engineer" />
         <meta
             property="og:description"
-            content="Software engineer leading backend development at Splitting Point Studios. Working in Go, exploring AI-enhanced low-level workflows in Rust, and thinking about systems design."
+            content="Software engineer leading backend development at Splitting Point Studios. Work history, education, and interests."
         />
         <meta property="og:url" content="https://honsoncooky.github.io/cookbook/" />
         <meta property="og:image" content="https://honsoncooky.github.io/cookbook/public/images/profile.png" />
@@ -24,37 +24,264 @@
         <link rel="stylesheet" href="public/style.css" />
     </head>
     <body>
-        <nav></nav>
-
-        <div class="page-header">
-            <div class="hero">
-                <img src="public/images/profile-sm.png" alt="Harrison Cook" class="profile" />
-                <div>
-                    <h1>Harrison Cook</h1>
-                    <h2>Software Engineer</h2>
-                </div>
+        <header class="hero">
+            <img src="public/images/profile-sm.png" alt="Harrison Cook" class="profile" />
+            <div>
+                <h1>Harrison Cook</h1>
+                <p class="role">Software Engineer</p>
+                <p class="nav-links">
+                    <a href="blogs/">Blog</a>
+                    <a href="cv/">CV</a>
+                    <a href="https://github.com/HonsonCooky">GitHub</a>
+                    <a href="https://www.linkedin.com/in/honsoncooky">LinkedIn</a>
+                </p>
             </div>
-        </div>
-        <p>
-            Growing up in a family obsessed with music and theatre, I spent years on stage before calculus and physics
-            completely hijacked my life plan. Somewhere between the performances and the problem sets, I fell head-first
-            into computers - the result is a wild mix of showman and nerd.
-        </p>
-        <p>
-            These days I'm leading backend development at Splitting Point Studios, building <code>Go</code> services
-            that help bring ambitious multiplayer game ideas to life. Before that, I was a software engineer at a large
-            SaaS platform and a major fuel distributor, both based in New Zealand.
-        </p>
-        <p>
-            All of that followed a Bachelor of Engineering with First Class Honours, majoring in Software Engineering
-            with a specialisation in Networked Applications - quite the mouthful, I know, haha.
-        </p>
-        <p>
-            For me there isn't much of a line between the work and the rest of my life. The game engines I build for
-            fun, the PCs I put together, and the low-level systems I explore in <code>Rust</code> all circle the same
-            question I chase at work: what should software be able to do, and what shouldn't it? If you want the longer
-            version of how I think about it, it's in <a href="blogs/wired-to-ask.html">Wired to Ask</a>.
-        </p>
-        <script src="public/site.js" data-root="."></script>
+        </header>
+
+        <section id="about">
+            <p>
+                Growing up in a family obsessed with music and theatre, I spent years on stage before calculus and
+                physics completely hijacked my life plan. Somewhere between the performances and the problem sets, I fell
+                head-first into computers - the result is a wild mix of showman and nerd.
+            </p>
+            <p>
+                These days I'm leading backend development at Splitting Point Studios, building <code>Go</code> services
+                that help bring ambitious multiplayer game ideas to life. Before that, I was a software engineer at a
+                large SaaS platform and a major fuel distributor, both based in New Zealand.
+            </p>
+            <p>
+                All of that followed a Bachelor of Engineering with First Class Honours, majoring in Software Engineering
+                with a specialisation in Networked Applications - quite the mouthful, I know, haha.
+            </p>
+            <p>
+                For me there isn't much of a line between the work and the rest of my life. The game engines I build for
+                fun, the PCs I put together, and the low-level systems I explore in <code>Rust</code> all circle the same
+                question I chase at work: what should software be able to do, and what shouldn't it? If you want the
+                longer version of how I think about it, it's in <a href="blogs/wired-to-ask.html">Wired to Ask</a>.
+            </p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <article>
+                <h3>Lead Software Engineer - Splitting Point Studios</h3>
+                <p class="meta">Sept 2025 - Present :: Remote, NZ</p>
+                <blockquote>
+                    I care far more about what a team can build together than about anything I could ship alone - it's a
+                    conviction I hold strongly. So even while I was the only engineer here for a while, every decision I
+                    made assumed the team we were going to become; as that team grew, the groundwork paid off.
+                </blockquote>
+                <ul>
+                    <li>
+                        Short-term wins drive every piece of work, but I make sure the team's velocity is always spent
+                        with the long-term in view - the two are only a trade-off if you let them be.
+                    </li>
+                    <li>
+                        Through small, persistent steps I delivered internal tooling that hadn't been thought possible -
+                        a long-term bet that paid off precisely because I kept carving room for it inside the short-term
+                        grind.
+                    </li>
+                    <li>
+                        We moved onto Railway early, a call I made against the obvious default, and it drove the lesson
+                        home: the constraint worth designing around is almost never the technology, it's the team behind
+                        it.
+                    </li>
+                    <li>
+                        I build by directing and interrogating AI rather than writing code by hand - a way of working
+                        that only earns its keep because I hold every line to a bar I can fully define and verify.
+                    </li>
+                </ul>
+                <p class="skills">
+                    <code>Go</code> :: <code>Docker</code> :: <code>Railway</code> :: <code>Postgres</code> ::
+                    <code>Redis</code> :: <code>MongoDB</code> :: <code>Luau</code> :: <code>React</code> ::
+                    <code>Claude</code>
+                </p>
+            </article>
+
+            <article>
+                <h3>Software Engineer - Xero</h3>
+                <p class="meta">Aug 2024 - Sept 2025 :: Wellington, NZ</p>
+                <blockquote>
+                    Xero was my first encounter with genuinely untouched legacy - battle-tested software so load-bearing
+                    it had run quietly for years, rightly treated as untouchable. Threading new behaviour through those
+                    old foundations without disturbing what already worked forced a patience and precision I'd never had
+                    to develop.
+                </blockquote>
+                <ul>
+                    <li>
+                        Working deep in undocumented C# and IIS, reverse-engineering intent straight from the code, is
+                        what left me genuinely unafraid to change software I didn't write.
+                    </li>
+                    <li>
+                        I helped architect the modern .NET replacement while the legacy system stayed live underneath it
+                        - holding both in my head at once taught me exactly how much risk hides inside a migration.
+                    </li>
+                    <li>
+                        Carrying production on-call for systems well beyond my own squad is the fastest way I know to get
+                        fluent at reasoning about unfamiliar code while it's still on fire.
+                    </li>
+                </ul>
+                <p class="skills">
+                    <code>C#</code> :: <code>IIS</code> :: <code>AWS</code> :: <code>DevOps</code>
+                </p>
+            </article>
+
+            <article>
+                <h3>Software Engineer - Z Energy</h3>
+                <p class="meta">Nov 2021 - Aug 2024 :: Wellington, NZ</p>
+                <blockquote>
+                    University trained me to chase the clever solution; Z Energy retrained me to chase the useful one.
+                    Tying what I built to real business outcomes rewired how I think about code - and that shift was
+                    harder to accept than any technical problem I faced there.
+                </blockquote>
+                <ul>
+                    <li>
+                        My first role out of university, inside a distributed TypeScript microservices estate run by a
+                        team of 10-20 - where the gap between code that works and code a team can live with stopped being
+                        theoretical.
+                    </li>
+                    <li>
+                        Building integrations across third-party vendors and legacy platforms is where messy, real-world
+                        constraints stopped reading as noise to me and started reading as the actual engineering problem.
+                    </li>
+                </ul>
+                <p class="skills">
+                    <code>TypeScript</code> :: <code>Azure</code> :: <code>DevOps</code> :: <code>"Microsoft-Shop"</code>
+                </p>
+            </article>
+
+            <article>
+                <h3>Software Engineer Intern - Raygun</h3>
+                <p class="meta">Nov 2020 - Feb 2021 :: Wellington, NZ</p>
+                <blockquote>
+                    Raygun was my first look at software as it actually lives outside a lecture hall. Helping build a
+                    developer-facing library surfaced a whole layer of decisions I had no framework for yet - I couldn't
+                    always follow the why, but watching real software breathe under real load was the moment academia
+                    stopped being enough.
+                </blockquote>
+                <ul>
+                    <li>
+                        Built and shipped raygun4reactnative with another intern, under senior direction - a published
+                        React Native library for crash reporting and real-user monitoring, and my first real taste of
+                        work that gets depended on instead of graded.
+                    </li>
+                </ul>
+                <p class="skills">
+                    <code>React Native</code> :: <code>JavaScript</code>
+                </p>
+            </article>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+
+            <article>
+                <h3>Bachelor of Engineering with First Class Honours</h3>
+                <p class="meta">2018 - 2021 :: Victoria University of Wellington</p>
+                <div><span class="label">Major:</span> Software Engineering</div>
+                <div><span class="label">Specialisation:</span> Networked Applications</div>
+                <ul>
+                    <li>Dean's List for Academic Excellence (2018, 2019, 2020, 2021)</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>National Certificate of Educational Achievement (NCEA, New Zealand)</h3>
+                <p class="meta">2013 - 2017 :: Marlborough Boys' College</p>
+                <ul>
+                    <li>Excellence Endorsement (Level 1, 2, 3)</li>
+                </ul>
+                <details>
+                    <summary>Academic Awards</summary>
+                    <ul>
+                        <li>NCEA Academic Badge (Level 1, 2)</li>
+                        <li>National Certificate in Mathematics (Level 1, 2)</li>
+                        <li>Merit Certificate for Excellence in Photography, Digital Technology, English (2017)</li>
+                        <li>Port Marlborough Award for Consistent, Outstanding Achievement (2016)</li>
+                        <li>Subject Award for Digital Technology, Photography (2016)</li>
+                        <li>CACTUS - 8 week youth development course focused on resilience, fitness, and teamwork (2016)</li>
+                        <li>Merit Certificate for Excellence in Digital Media (2015)</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Theatre Awards and Participation</summary>
+                    <p><em>And you thought I was joking about being musically involved.</em></p>
+                    <ul>
+                        <li>Cultural Gold Award for excellence in Musical Theatre, Drama (2017)</li>
+                        <li>Regional Shakespeare Festival (2015-2017)</li>
+                        <li>School Production (2013-2017)</li>
+                        <li>Cultural Gold Award for contribution to choir, drama, musical theatre (2016)</li>
+                        <li>Dramatic Performance Cup for best dramatic performance (2016)</li>
+                        <li>School Choir (2013-2016)</li>
+                        <li>Stage Band (2013-2016)</li>
+                    </ul>
+                </details>
+            </article>
+        </section>
+
+        <section id="interests">
+            <h2>Interests</h2>
+            <p>
+                Most of what I do in my own time isn't really separate from my work - it's the same curiosity, pointed
+                in different directions. I've written about how I tend to think in
+                <a href="blogs/wired-to-ask.html">Wired to Ask</a>; what follows is just where that goes when the
+                problem is one I picked myself.
+            </p>
+
+            <div class="interests-list">
+                <article>
+                    <h3>Game Engines</h3>
+                    <p>
+                        Building my own game engine isn't about reinventing the wheel so much as reinventing the
+                        workflow. Mainstream engines are tightly coupled to their own way of working - what lets them
+                        scale, but also what asks for more surface knowledge than I've ever been good at carrying.
+                        Building it from the ground up, with AI in the loop, is how I go looking for a smaller surface
+                        area: one shaped to how I actually think.
+                    </p>
+                </article>
+                <article>
+                    <h3>Hardware</h3>
+                    <p>
+                        I've built my own PC, but what stays with me isn't the spec sheet - it's the intuition for what
+                        modern hardware can actually do. By that measure something doesn't add up: today's machines are
+                        well beyond what last decade's games needed, yet current titles still bring strong hardware to
+                        its knees. I read it as an optimisation problem, just not the usual one - the industry pours
+                        effort into the low level while the high-level wins go untouched. A lot of careful work, aimed at
+                        the wrong layer.
+                    </p>
+                </article>
+                <article>
+                    <h3>Ergo Keyboards</h3>
+                    <p>
+                        This one began as a fix rather than a hobby. A childhood elbow injury left my right wrist with
+                        limited rotation - a non-issue at school, until full-time keyboard work turned it into a real
+                        one. Solving it pulled me deep into ergonomic boards, through a Planck EZ and a Glove80 and a
+                        fair amount of trial and error, and landed me on a ZSA Voyager, which has been my keyboard ever
+                        since. Being able to rest my elbow properly again changed things, and I've grown genuinely
+                        passionate about the space.
+                    </p>
+                </article>
+                <article>
+                    <h3>Linux</h3>
+                    <p>
+                        I enjoy driving Linux as my daily OS, and when a workflow suits it, that's where I work. I hold
+                        it loosely, though - I move between Linux and Windows depending on what the task in front of me
+                        actually wants. The control Linux gives is the part I genuinely enjoy; the willingness to switch
+                        is just pragmatism.
+                    </p>
+                </article>
+                <article>
+                    <h3>The Outdoors</h3>
+                    <p>
+                        Getting outdoors, hiking most often, is where my best ideas tend to surface. Stepping away from
+                        the screen gives them room to breathe and connect in ways they never quite do while I'm staring
+                        straight at the problem. It reads as time off, but it's closer to a slower way of doing the same
+                        work.
+                    </p>
+                </article>
+            </div>
+        </section>
+
     </body>
 </html>
