@@ -93,14 +93,29 @@
   ],
   "interests": [
     {
+      "name": "Game Engines",
+      "summary": "Building my own game engine isn't about reinventing the wheel so much as reinventing the workflow. Mainstream engines are tightly coupled to their own way of working - what lets them scale, but also what asks for more surface knowledge than I've ever been good at carrying. Building it from the ground up, with AI in the loop, is how I go looking for a smaller surface area: one shaped to how I actually think.",
+      "cvSummary": "Building my own game engine - less to reinvent the wheel than the workflow, trading the surface knowledge mainstream engines demand for a smaller surface area shaped to how I think."
+    },
+    {
+      "name": "Hardware",
+      "summary": "I've built my own PC, but what stays with me isn't the spec sheet - it's the intuition for what modern hardware can actually do. By that measure something doesn't add up: today's machines are well beyond what last decade's games needed, yet current titles still bring strong hardware to its knees. I read it as an optimisation problem, just not the usual one - the industry pours effort into the low level while the high-level wins go untouched. A lot of careful work, aimed at the wrong layer.",
+      "cvSummary": "Built my own PC, but the real value is an intuition for what modern hardware can do - and a sense that games today optimise at the wrong layer, chasing low-level wins while the high-level ones go untouched."
+    },
+    {
       "name": "Ergo Keyboards",
-      "summary": "A childhood elbow injury left me with limited rotation in my right wrist - not a problem in school, but consistent full-time work at a keyboard changed that. I started with proper touch typing and a company-provided ergonomic keyboard, fell into keyboard-centric workflows and Neovim, and from there went deep into the world of ergonomic keyboards trying to solve a growing list of problems. A Planck EZ, a Glove80, a period of defeat, and a standard keyboard later - I landed on the ZSA Voyager, which I now have mounted to the side of my desk. Being able to rest my elbow properly again has made a real difference, and whilst I'm still a keyboard-first person, I've made peace with the mouse too.",
-      "cvSummary": "Deep into ergonomic keyboards following a childhood elbow injury - currently on a ZSA Voyager after a long journey through ortholinear and split boards."
+      "summary": "This one began as a fix rather than a hobby. A childhood elbow injury left my right wrist with limited rotation - a non-issue at school, until full-time keyboard work turned it into a real one. Solving it pulled me deep into ergonomic boards, through a Planck EZ and a Glove80 and a fair amount of trial and error, and landed me on a ZSA Voyager, which has been my keyboard ever since. Being able to rest my elbow properly again changed things, and I've grown genuinely passionate about the space.",
+      "cvSummary": "Deep into ergonomic keyboards following a childhood elbow injury - settled on a ZSA Voyager after a long journey through ortholinear and split boards."
     },
     {
       "name": "Linux",
-      "summary": "Linux is my daily driver - once I was no longer tied to Windows for work, making the switch was an easy call. After years of fighting developer-unfriendly edge cases and working around the OS rather than with it, the speed and control Linux gives me felt like a completely different world.",
-      "cvSummary": "Made the full switch to Fedora Linux once I was no longer tied to Windows for work - haven't considered going back."
+      "summary": "I enjoy driving Linux as my daily OS, and when a workflow suits it, that's where I work. I hold it loosely, though - I move between Linux and Windows depending on what the task in front of me actually wants. The control Linux gives is the part I genuinely enjoy; the willingness to switch is just pragmatism.",
+      "cvSummary": "Happily daily-drive Linux, but move between it and Windows by workflow - the control is the draw, the switching is pragmatism."
+    },
+    {
+      "name": "The Outdoors",
+      "summary": "Getting outdoors, hiking most often, is where my best ideas tend to surface. Stepping away from the screen gives them room to breathe and connect in ways they never quite do while I'm staring straight at the problem. It reads as time off, but it's closer to a slower way of doing the same work.",
+      "cvSummary": "Hiking and getting outdoors - where my best ideas tend to surface, with room to breathe away from the screen."
     }
   ],
   "skillCategories": {
