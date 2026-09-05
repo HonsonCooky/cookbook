@@ -1,0 +1,214 @@
+@page {
+    size: A4 portrait;
+    margin: 0;
+}
+
+.cv-page {
+    font-family: var(--font-sans);
+    font-size: 10pt;
+    line-height: 1.4;
+    color: var(--fg);
+    background: var(--surface);
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    overflow: visible;
+    padding: 1.5cm;
+    margin: 0 0 1.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-page .cv-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cv-page .cv-body section {
+    padding-bottom: 1em;
+    margin-bottom: 0;
+}
+
+.cv-page .cv-body section:last-child {
+    padding-bottom: 0;
+}
+
+.cv-page h1 {
+    font-size: 15pt;
+    color: var(--fg);
+    margin-bottom: 0.2em;
+}
+
+.cv-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.cv-divider {
+    color: var(--fg-muted);
+    font-size: 15pt;
+}
+
+.cv-role {
+    font-size: 12pt;
+    color: var(--fg-muted);
+}
+
+.cv-page h2 {
+    font-size: 11pt;
+    color: var(--fg);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.15em;
+    margin: 0 0 0.3em 0;
+}
+
+.cv-page h3 {
+    font-size: 10pt;
+    margin: 0.5em 0 0.1em 0;
+}
+
+/* Separate consecutive entries (job-to-job, qualification-to-qualification) */
+.cv-page ul + h3 {
+    margin-top: 1.4em;
+}
+
+.cv-page .meta {
+    font-size: 9pt;
+    color: var(--fg-muted);
+    margin: 0 0 0.2em 0;
+}
+
+.cv-page ul {
+    list-style: "• " outside;
+    padding-left: 1.2ch;
+    margin: 0.2em 0;
+}
+
+.cv-page li {
+    margin-bottom: 0.1em;
+}
+
+.cv-skills-table {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    row-gap: 0.2em;
+}
+
+.cv-skills-table .label {
+    padding-right: 1ch;
+}
+
+.cv-skills-table .gap {
+    padding-left: 3ch;
+}
+
+.cv-interests-table {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 0.2em;
+}
+
+.cv-interests-table .label {
+    padding-right: 1ch;
+}
+
+.cv-wrapper {
+    overflow-x: auto;
+}
+
+.cv-contact {
+    font-size: 9pt;
+    color: var(--fg-muted);
+    margin: 0.2em 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2em;
+}
+
+.cv-contact a {
+    color: var(--fg-muted);
+    font-family: var(--font-sans);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.cv-contact a svg {
+    width: 1.1em;
+    height: 1.1em;
+    margin-right: 0.6ch;
+    flex-shrink: 0;
+}
+
+.cv-page .summary {
+    margin: 1em 0;
+}
+
+.cv-hint {
+    color: var(--fg-muted);
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+}
+
+.cv-hint button {
+    font: inherit;
+    font-family: var(--font-mono);
+    color: var(--link);
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media print {
+    body {
+        background: #fff;
+        color: #1a1a1a;
+        padding: 0;
+        margin: 0;
+        max-width: none;
+    }
+
+    nav,
+    .cv-hint,
+    .page-header {
+        display: none;
+    }
+
+    .cv-wrapper {
+        overflow: visible;
+    }
+
+    .cv-page {
+        color: #1a1a1a;
+        background: #fff;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        width: auto;
+    }
+
+    .cv-page,
+    .cv-page h1,
+    .cv-page h2,
+    .cv-page h3,
+    .cv-page .meta,
+    .cv-page .skills,
+    .cv-page .label,
+    .cv-role,
+    .cv-divider,
+    .cv-contact,
+    .cv-contact a {
+        color: #1a1a1a;
+    }
+
+    .cv-page h2 {
+        border-bottom-color: #ccc;
+    }
+}
