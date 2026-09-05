@@ -19,12 +19,12 @@
     /* Vertical rhythm on a baseline grid: the base unit is the body line-height
        (1.5 x 16px = 24px), and every gap is a whole multiple of it, so spacing
        follows one scale instead of hand-picked values. Section : entry stays 2 : 1. */
-    --space-unit: 1.5rem;                          /* 24px - the baseline */
-    --space-tight: calc(var(--space-unit) / 2);    /* 12px - within a group */
-    --space-block: var(--space-unit);              /* 24px - paragraphs, lists */
-    --space-heading: var(--space-unit);            /* 24px - heading to its body */
-    --space-entry: calc(var(--space-unit) * 3);    /* 72px - between entries */
-    --space-section: calc(var(--space-unit) * 6);  /* 144px - between sections */
+    --space-unit: 1.5rem; /* 24px - the baseline */
+    --space-tight: calc(var(--space-unit) / 2); /* 12px - within a group */
+    --space-block: var(--space-unit); /* 24px - paragraphs, lists */
+    --space-heading: var(--space-unit); /* 24px - heading to its body */
+    --space-entry: calc(var(--space-unit) * 3); /* 72px - between entries */
+    --space-section: calc(var(--space-unit) * 6); /* 144px - between sections */
 }
 
 /* One Light */
@@ -126,8 +126,8 @@ li {
    of CV / blog pages ---- */
 .nav-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-block);
+    flex-direction: column;
+
     margin: var(--space-tight) 0 0 0;
 }
 
@@ -162,7 +162,7 @@ body > nav.nav-links {
     border-radius: 50%;
     border: 2px solid var(--border);
     object-fit: cover;
-    object-position: 52% 25%;
+    object-position: 50% 0;
 }
 
 h1 {
@@ -181,6 +181,34 @@ h1 {
     margin: 0;
 }
 
+/* icon links (PDF, GitHub, LinkedIn) pushed to the far right of the hero */
+.hero-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-tight);
+    margin-left: auto;
+}
+
+.hero-links a {
+    display: block;
+    color: var(--fg-muted);
+}
+
+.hero-links a:hover {
+    color: var(--link);
+}
+
+.hero-links svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 @media (max-width: 480px) {
     .hero {
         justify-content: center;
@@ -191,15 +219,39 @@ h1 {
         justify-content: center;
     }
 
+    .hero-links {
+        flex-direction: row;
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
     .profile {
         width: 200px;
         height: 200px;
     }
 }
 
+/* ---- section nav: sticks to the top of the viewport once scrolled past ---- */
+.page-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    /* gap and font scale together with the viewport so all four links stay on one line */
+    gap: 1.5em;
+    font-size: clamp(0.85rem, 3.4vw, 1rem);
+    padding: var(--space-tight) 0;
+    /* a full section gap before About, so the nav reads as a masthead, not a heading */
+    margin-bottom: calc(var(--space-unit) * 2);
+    background: var(--bg);
+}
+
 /* ---- sections: content-sized, generous chapter-style gaps between them ---- */
 body > section {
     margin-bottom: var(--space-section);
+    /* anchor jumps land below the sticky nav, not underneath it */
+    scroll-margin-top: calc(var(--space-unit) * 2);
 }
 
 body > section:last-child {
@@ -266,7 +318,7 @@ body > section article:first-of-type {
     margin-top: calc(var(--space-entry) / 2);
 }
 
-/* ---- page header (CV, blog) ---- */
+/* ---- page header (CV) ---- */
 .page-header {
     margin-bottom: var(--space-heading);
 }
@@ -275,32 +327,10 @@ body > section article:first-of-type {
     margin: 0;
 }
 
-.post-meta {
-    color: var(--fg-muted);
-    font-size: 0.9em;
-}
-
-/* ---- blog list ---- */
-.post-list {
-    list-style: none;
-    padding: 0;
-}
-
-.post-list li {
-    margin-bottom: var(--space-tight);
-}
-
-.post-list a {
-    display: block;
-    font-weight: bold;
-}
-
-.post-list small {
-    display: block;
-}
-
 @media print {
-    .nav-links {
+    .nav-links,
+    .hero-links,
+    .page-nav {
         display: none;
     }
 
