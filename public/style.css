@@ -104,14 +104,6 @@ hr {
     margin: calc(var(--space-entry) / 2) 0;
 }
 
-blockquote {
-    margin: var(--space-block) 0;
-    padding-left: 1em;
-    border-left: 2px solid var(--border);
-    color: var(--fg-muted);
-    font-style: italic;
-}
-
 ul {
     list-style: "• " outside;
     padding-left: 1.2ch;
