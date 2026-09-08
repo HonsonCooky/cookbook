@@ -21,6 +21,12 @@
         <meta property="og:image" content="https://honsoncooky.github.io/cookbook/public/images/profile.png" />
         <meta name="twitter:card" content="summary" />
         <link rel="icon" type="image/png" href="../public/images/favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Condensed:wght@300;600;700&display=swap"
+        />
         <link rel="stylesheet" href="../public/style.css" />
         <link rel="stylesheet" href="cv.css" />
     </head>
@@ -61,59 +67,59 @@
                         >linkedin.com/in/honsoncooky
                     </a>
                 </p>
-                <p class="summary">
-                    Software engineering seems a strange place to end up, coming from what friends would jest is a
-                    <q>singing cult</q>. I spent years on stage, contributing and playing a variety of unique parts of
-                    some larger production. However, a knack for calculus and a quiet fascination with technology that
-                    sent me toward completing a Bachelor of Engineering at Victoria University. My career since, has
-                    spanned a wide variety of environments. Showing me how software delivers value, and the multitude of
-                    difficulties that come with it. It's much closer to a stage production.
-                </p>
-                <p>
-                    Because I'm naturally drawn to this craft and its potential, it tends to spill over into my free
-                    time as well. Like a musician, I practice - exploring, experimenting, and reinforcing. Exploring Vim
-                    motions, building desktop computers, adapting to ergonomic keyboards and layouts. Currently, I'm
-                    developing 3D video games in Odin, exploring my own workflow that avoids the noise of modern
-                    tooling. It is all just quiet practice for myself, refining my own approach to this craft.
-                </p>
-
                 <div class="cv-body">
+                    <section id="cv-about">
+                        <h2>About</h2>
+                        <p class="summary">
+                            Software engineering seems a strange place to end up, coming from what some would jest is a
+                            <q>singing cult</q>. Years on stage alongside friends and family left a mark I have never
+                            shaken: a desire to contribute to productions only made possible because of every person's
+                            contributions. A knack for calculus and a quiet fascination with technology sent me
+                            toward completing a Bachelor of Engineering at Victoria University. My career since has
+                            spanned a wide variety of environments, showing me how software delivers value, and the
+                            multitude of difficulties that come with it. Like a musician, I practice in my free time.
+                            Exploring, experimenting, and casually reinforcing the elements that enable me to make small
+                            improvements every day.
+                        </p>
+                    </section>
+
                     <section id="cv-work">
                         <h2>Work (Software Engineering)</h2>
                         <h3>Software Engineer - Splitting Point Studios</h3>
                         <p class="meta">Sept 2025 - Present :: Remote, NZ</p>
                         <ul>
                             <li>
-                                <b>Initial Architecture:</b> Drafted the core backend services, a foundation multiple
-                                games could build upon.
+                                <h4>Founding Backend Engineer:</h4>
+                                Established the studio's backend from speculative feature specifications to an in-house
+                                platform in <code>Go</code> that games rely upon today.
                             </li>
                             <li>
-                                <b>Scaling Workflows:</b> Evolved the backend from single-developer prototypes into a
-                                stable, multi-game, multi-developer environment.
+                                <h4>Building Beyond the Spec:</h4>
+                                Worked directly with the CEO to push new ideas into the platform, building past the
+                                specifications given. Several of the studio's most used tools started that way.
+                            </li>
+                            <li>
+                                <h4>Today and Tomorrow:</h4>
+                                Delivered what each day needed while quietly laying groundwork for what was coming,
+                                stretching past the immediate scope only where the bet was calculated.
                             </li>
                         </ul>
                         <h3>Software Engineer - Xero</h3>
                         <p class="meta">Aug 2024 - Sept 2025 :: Wellington, NZ</p>
                         <ul>
                             <li>
-                                <b>Migration Architecture:</b> Assisted in designing a modern .NET Core replacement for
-                                a legacy solution.
-                            </li>
-                            <li>
-                                <b>Legacy Systems:</b> Threaded new behaviour into load-bearing legacy software without
-                                disturbing what already worked.
+                                <h4>Legacy at Scale:</h4>
+                                Added new features to a large, long-lived <code>C#</code> codebase without breaking what already
+                                worked, and helped design its <code>.NET Core</code> replacement.
                             </li>
                         </ul>
                         <h3>Software Engineer - Z Energy</h3>
                         <p class="meta">Nov 2021 - Aug 2024 :: Wellington, NZ</p>
                         <ul>
                             <li>
-                                <b>System Integration:</b> Built glue services bridging legacy enterprise platforms with
-                                third-party vendor APIs.
-                            </li>
-                            <li>
-                                <b>Distributed Architecture:</b> Maintained a high-scale TypeScript microservice estate
-                                where clear domain boundaries kept a large team aligned.
+                                <h4>Microservice Architecture:</h4>
+                                Migrated services, maintained infrastructure and built features across a <code>TypeScript</code>
+                                microservice estate on <code>Azure</code>, including data pipelines into third-party vendor APIs.
                             </li>
                         </ul>
                     </section>
@@ -123,8 +129,14 @@
                         <h3>Bachelor of Engineering with First Class Honours</h3>
                         <p class="meta">2018 - 2021 :: Victoria University of Wellington</p>
                         <ul>
-                            <li>Major: Software Engineering</li>
-                            <li>Specialisation: Networked Applications</li>
+                            <li>
+                                <h4>Major:</h4>
+                                Software Engineering
+                            </li>
+                            <li>
+                                <h4>Specialisation:</h4>
+                                Networked Applications
+                            </li>
                             <li>Dean's List for Academic Excellence (2018, 2019, 2020, 2021)</li>
                         </ul>
                     </section>
@@ -132,12 +144,18 @@
                     <section id="cv-skills">
                         <h2>Skills</h2>
                         <div class="cv-skills-table">
-                            <span class="label">Lang:</span><span>{ Go, C#, TypeScript, JavaScript }</span>
-                            <span class="label gap">Frameworks:</span><span>{ .NET, Node.js, React, React Native }</span>
-                            <span class="label">Infra:</span><span>{ Docker, Linux, AWS, Azure, Railway }</span>
-                            <span class="label gap">Data:</span><span>{ Postgres, Redis, MongoDB, DynamoDB }</span>
-                            <span class="label">Process:</span><span>{ Git, Jira, Terraform, GitHub Actions }</span>
-                            <span class="label gap">AI:</span><span>{ Claude, Gemini }</span>
+                            <h4 class="label">Lang</h4>
+                            <span>:= { Go, C#, TypeScript, C, Rust, Odin }</span>
+                            <h4 class="label gap">Stacks</h4>
+                            <span>:= { .NET, Node.js, React, React Native }</span>
+                            <h4 class="label">Infra</h4>
+                            <span>:= { Docker, Linux, AWS, Azure, Railway }</span>
+                            <h4 class="label gap">Operations</h4>
+                            <span>:= { Git, Jira, Terraform, GitHub Actions }</span>
+                            <h4 class="label">Data</h4>
+                            <span>:= { Relational, Key-Value, Document }</span>
+                            <h4 class="label gap">AI Tools</h4>
+                            <span>:= { Claude, Gemini }</span>
                         </div>
                     </section>
                 </div>

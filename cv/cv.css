@@ -1,12 +1,24 @@
+/* ---- CV page: a fixed A4 sheet ----
+   Type scale (pt):   10 body + h4 / 12 h3 / 14 h2 / 24 h1 + role
+   Spacing scale (em, relative to 10pt body): 1 = 0.25em, 2 = 0.5em, 3 = 1em, 4 = 1.5em
+   Rules: entry title sits flush on its date line; date to list, h2 to body and bullet to bullet use
+   scale 2; skills row to row uses scale 1; entry to entry and header to body use scale 4; sections
+   carry no padding, the flex column spaces them. */
+
 @page {
     size: A4 portrait;
     margin: 0;
 }
 
 .cv-page {
+    --cv-space-1: 0.25em;
+    --cv-space-2: 0.5em;
+    --cv-space-3: 1em;
+    --cv-space-4: 1.5em;
+
     font-family: var(--font-sans);
     font-size: 10pt;
-    line-height: 1.4;
+    line-height: 1.45;
     color: var(--fg);
     background: var(--surface);
     width: 210mm;
@@ -21,113 +33,42 @@
     flex-direction: column;
 }
 
-.cv-page .cv-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.cv-page .cv-body section {
-    padding-bottom: 1em;
-    margin-bottom: 0;
-}
-
-.cv-page .cv-body section:last-child {
-    padding-bottom: 0;
-}
-
-.cv-page h1 {
-    font-size: 15pt;
-    color: var(--fg);
-    margin-bottom: 0.2em;
-}
-
-.cv-header {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-}
-
-.cv-divider {
-    color: var(--fg-muted);
-    font-size: 15pt;
-}
-
-.cv-role {
-    font-size: 12pt;
-    color: var(--fg-muted);
-}
-
-.cv-page h2 {
-    font-size: 12pt;
-    color: var(--fg);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.15em;
-    margin: 0 0 0.6em 0;
-}
-
-.cv-page h3 {
-    font-size: 11pt;
-    margin: 0.5em 0 0.25em 0;
-}
-
-/* Separate consecutive entries (job-to-job, qualification-to-qualification) */
-.cv-page ul + h3 {
-    margin-top: 1.4em;
-}
-
-.cv-page .meta {
-    font-size: 9pt;
-    color: var(--fg-muted);
-    margin: 0 0 0.2em 0;
-}
-
-.cv-page ul {
-    list-style: "• " outside;
-    padding-left: 1.2ch;
-    margin: 0.2em 0;
-}
-
-.cv-page li {
-    margin-bottom: 0.1em;
-}
-
-.cv-page li b {
-    font-weight: normal;
-    color: var(--fg-muted);
-}
-
-.cv-skills-table {
-    display: grid;
-    grid-template-columns: auto auto auto 1fr;
-    row-gap: 0.2em;
-}
-
-.cv-skills-table .label {
-    padding-right: 1ch;
-}
-
-.cv-skills-table .gap {
-    padding-left: 3ch;
-}
-
 .cv-wrapper {
     overflow-x: auto;
 }
 
-.cv-contact {
-    font-size: 9pt;
-    color: var(--fg-muted);
-    margin: 0.2em 0;
+/* ---- header: name :: role, contact row, summary ---- */
+
+.cv-header {
     display: flex;
-    justify-content: flex-start;
+    align-items: baseline;
+    gap: 0.6em;
+    font-family: var(--font-title);
+    font-size: 24pt;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+}
+
+.cv-page h1 {
+    font-size: inherit;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cv-role {
+    font-weight: 300;
+}
+
+.cv-contact {
+    font-size: 10pt;
+    margin: 0 0 var(--cv-space-4) 0;
+    display: flex;
     gap: 2em;
 }
 
 .cv-contact a {
-    color: var(--fg-muted);
     font-family: var(--font-sans);
+    color: inherit;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -141,8 +82,103 @@
 }
 
 .cv-page .summary {
-    margin: 1em 0;
+    margin: 0;
 }
+
+/* code on paper is a monospaced word with a hairline underneath: no chip */
+.cv-page code {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 0 0 1px 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* ---- body: first section hugs the summary, last hugs the bottom margin, the rest of the
+   sheet is split between sections so each reads as its own block ---- */
+
+.cv-page .cv-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cv-page .cv-body section {
+    margin: 0;
+}
+
+/* ---- headings ---- */
+
+.cv-page h2 {
+    font-family: var(--font-title);
+    font-size: 14pt;
+    font-weight: 300;
+    line-height: 1.2;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: var(--cv-space-1);
+    margin: 0 0 var(--cv-space-2) 0;
+}
+
+.cv-page h3 {
+    font-family: var(--font-title);
+    font-size: 12pt;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* consecutive entries (job to job) */
+.cv-page ul + h3 {
+    margin-top: var(--cv-space-4);
+}
+
+/* bullet titles: body face in bold, so they read as part of the line */
+.cv-page h4 {
+    font-family: var(--font-sans);
+    font-size: inherit;
+    font-weight: 700;
+}
+
+.cv-page .meta {
+    font-size: 1em;
+    margin: 0 0 var(--cv-space-2) 0;
+}
+
+/* ---- lists ---- */
+
+.cv-page ul {
+    list-style: "• " outside;
+    padding-left: 1.2ch;
+    margin: 0;
+}
+
+.cv-page li {
+    margin: 0 0 var(--cv-space-2) 0;
+}
+
+.cv-page li:last-child {
+    margin-bottom: 0;
+}
+
+/* ---- skills grid: label := { values }, two pairs per row ---- */
+
+.cv-skills-table {
+    display: grid;
+    grid-template-columns: auto auto auto 1fr;
+    row-gap: var(--cv-space-1);
+}
+
+.cv-skills-table .label {
+    padding-right: 1ch;
+}
+
+.cv-skills-table .gap {
+    padding-left: 3ch;
+}
+
+/* ---- on-screen chrome, hidden in print ---- */
 
 .cv-hint {
     color: var(--fg-muted);
@@ -160,6 +196,8 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+/* ---- print ---- */
 
 @media print {
     body {
@@ -189,21 +227,8 @@
         width: auto;
     }
 
-    .cv-page,
-    .cv-page h1,
     .cv-page h2,
-    .cv-page h3,
-    .cv-page .meta,
-    .cv-page .skills,
-    .cv-page .label,
-    .cv-role,
-    .cv-divider,
-    .cv-contact,
-    .cv-contact a {
-        color: #1a1a1a;
-    }
-
-    .cv-page h2 {
+    .cv-page code {
         border-bottom-color: #ccc;
     }
 }

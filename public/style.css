@@ -2,10 +2,13 @@
 :root {
     color-scheme: light dark;
     --font-sans:
-        system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
         sans-serif;
+    --font-title:
+        "IBM Plex Sans Condensed", Bahnschrift, "Avenir Next", Futura, "Gill Sans",
+        "Trebuchet MS", sans-serif;
     --font-mono:
-        ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono",
+        "IBM Plex Mono", ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono",
         "Segoe UI Mono", "Roboto Mono", Menlo, Consolas, "Liberation Mono",
         monospace;
     --bg: #282c33;
@@ -158,18 +161,20 @@ body > nav.nav-links {
 }
 
 h1 {
+    font-family: var(--font-title);
     color: var(--fg);
     margin: 0 0 var(--space-tight) 0;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3.25rem;
     line-height: 1;
 }
 
 .role {
+    font-family: var(--font-title);
     color: var(--fg-muted);
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin: 0;
 }
 
@@ -251,6 +256,7 @@ body > section:last-child {
 }
 
 h2 {
+    font-family: var(--font-title);
     color: var(--fg);
     font-size: 1.75rem;
     font-weight: 600;
@@ -260,6 +266,15 @@ h2 {
 }
 
 h3 {
+    font-family: var(--font-title);
+    margin: 0;
+}
+
+h4 {
+    display: inline;
+    font-family: var(--font-title);
+    font-size: 1em;
+    font-weight: 700;
     margin: 0;
 }
 
