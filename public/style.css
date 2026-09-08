@@ -154,7 +154,7 @@ body > nav.nav-links {
     border-radius: 50%;
     border: 2px solid var(--border);
     object-fit: cover;
-    object-position: 50% 0;
+    object-position: 50% 20%;
 }
 
 h1 {
