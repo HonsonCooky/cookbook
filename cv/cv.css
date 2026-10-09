@@ -37,36 +37,37 @@
     overflow-x: auto;
 }
 
-/* ---- header: name :: role, contact row, summary ---- */
+/* ---- header: name and role on the left, a contact link beside each on the right ---- */
 
 .cv-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: baseline;
-    gap: 0.6em;
+    column-gap: 2em;
+    row-gap: var(--cv-space-1);
     font-family: var(--font-title);
-    font-size: 24pt;
-    letter-spacing: 0.01em;
     line-height: 1.1;
+    margin: 0 0 var(--cv-space-4) 0;
+}
+
+.cv-page h1,
+.cv-role {
+    letter-spacing: 0.01em;
 }
 
 .cv-page h1 {
-    font-size: inherit;
+    font-size: 24pt;
     font-weight: 700;
     margin: 0;
 }
 
 .cv-role {
+    font-size: 14pt;
     font-weight: 300;
 }
 
-.cv-contact {
+.cv-header a {
     font-size: 10pt;
-    margin: 0 0 var(--cv-space-4) 0;
-    display: flex;
-    gap: 2em;
-}
-
-.cv-contact a {
     font-family: var(--font-sans);
     color: inherit;
     text-decoration: none;
@@ -74,7 +75,7 @@
     align-items: center;
 }
 
-.cv-contact a svg {
+.cv-header a svg {
     width: 1.1em;
     height: 1.1em;
     margin-right: 0.6ch;
@@ -114,7 +115,7 @@
 .cv-page h2 {
     font-family: var(--font-title);
     font-size: 14pt;
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.2;
     border-bottom: 1px solid var(--border);
     padding-bottom: var(--cv-space-1);
@@ -124,20 +125,47 @@
 .cv-page h3 {
     font-family: var(--font-title);
     font-size: 12pt;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.2;
     margin: 0;
 }
 
+/* entry title and its meta line, ruled underneath: lighter than the section rule (--border mixed into the
+   page colour), and only as wide as the longer of the two lines */
+.cv-page hgroup {
+    width: fit-content;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 80%, var(--surface));
+    padding-bottom: var(--cv-space-1);
+    margin: var(--cv-space-3) 0 0 0;
+}
+
+.cv-page hgroup .meta {
+    margin: 0;
+}
+
 /* consecutive entries (job to job) */
-.cv-page ul + h3 {
+.cv-page :is(ul, .entry) + hgroup {
     margin-top: var(--cv-space-4);
 }
 
-/* bullet titles: body face in bold, so they read as part of the line */
+.cv-page .entry {
+    margin: 0;
+}
+
+/* bullet titles: body face at body weight, so they read as part of the line */
 .cv-page h4 {
     font-family: var(--font-sans);
     font-size: inherit;
+    font-weight: 400;
+}
+
+.cv-page li h4 {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* skills labels stay bold: that table is its own format */
+.cv-page .cv-skills-table h4 {
     font-weight: 700;
 }
 

@@ -44,12 +44,9 @@
 
         <div class="cv-wrapper">
             <div class="cv-page">
+                <!-- grid, row by row: name | github, role | linkedin -->
                 <div class="cv-header">
                     <h1>Harrison Cook</h1>
-                    <span class="cv-divider">::</span>
-                    <span class="cv-role">Software Engineer</span>
-                </div>
-                <p class="cv-contact">
                     <a href="https://github.com/HonsonCooky">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path
@@ -58,6 +55,7 @@
                             /></svg
                         >github.com/HonsonCooky
                     </a>
+                    <span class="cv-role">Software Engineer</span>
                     <a href="https://www.linkedin.com/in/honsoncooky">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path
@@ -66,7 +64,7 @@
                             /></svg
                         >linkedin.com/in/honsoncooky
                     </a>
-                </p>
+                </div>
                 <div class="cv-body">
                     <section id="cv-about">
                         <h2>About</h2>
@@ -85,50 +83,41 @@
 
                     <section id="cv-work">
                         <h2>Work (Software Engineering)</h2>
-                        <h3>Software Engineer - Splitting Point Studios</h3>
-                        <p class="meta">Sept 2025 - Present :: Remote, NZ</p>
-                        <ul>
-                            <li>
-                                <h4>Founding Backend Engineer:</h4>
-                                Established the studio's backend from speculative feature specifications to an in-house
-                                platform in <code>Go</code> that games rely upon today.
-                            </li>
-                            <li>
-                                <h4>Building Beyond the Spec:</h4>
-                                Worked directly with the CEO to push new ideas into the platform, building past the
-                                specifications given. Several of the studio's most used tools started that way.
-                            </li>
-                            <li>
-                                <h4>Today and Tomorrow:</h4>
-                                Delivered what each day needed while quietly laying groundwork for what was coming,
-                                stretching past the immediate scope only where the bet was calculated.
-                            </li>
-                        </ul>
-                        <h3>Software Engineer - Xero</h3>
-                        <p class="meta">Aug 2024 - Sept 2025 :: Wellington, NZ</p>
-                        <ul>
-                            <li>
-                                <h4>Legacy at Scale:</h4>
-                                Added new features to a large, long-lived <code>C#</code> codebase without breaking what
-                                already worked, and helped design its <code>.NET Core</code> replacement.
-                            </li>
-                        </ul>
-                        <h3>Software Engineer - Z Energy</h3>
-                        <p class="meta">Nov 2021 - Aug 2024 :: Wellington, NZ</p>
-                        <ul>
-                            <li>
-                                <h4>Microservice Architecture:</h4>
-                                Migrated services, maintained infrastructure and built features across a
-                                <code>TypeScript</code> microservice estate on <code>Azure</code>, including data
-                                pipelines into third-party vendor APIs.
-                            </li>
-                        </ul>
+                        <hgroup>
+                            <h3>Software Engineer - Splitting Point Studios</h3>
+                            <p class="meta">Sept 2025 - Present :: Remote, NZ</p>
+                        </hgroup>
+                        <p class="entry">
+                            Founding backend engineer. Took the studio's backend from speculative feature
+                            specifications to an in-house <code>Go</code> platform its games rely on today, working
+                            directly with the CEO and building past the spec where it paid off. Grew the backend from
+                            just me into a team, mentoring juniors and onboarding other teams onto our services.
+                        </p>
+                        <hgroup>
+                            <h3>Software Engineer - Xero</h3>
+                            <p class="meta">Aug 2024 - Sept 2025 :: Wellington, NZ</p>
+                        </hgroup>
+                        <p class="entry">
+                            Added features to a large, long-lived <code>C#</code> codebase without breaking what
+                            already worked, and contributed to the design of new <code>.NET Core</code> systems.
+                        </p>
+                        <hgroup>
+                            <h3>Software Engineer - Z Energy</h3>
+                            <p class="meta">Nov 2021 - Aug 2024 :: Wellington, NZ</p>
+                        </hgroup>
+                        <p class="entry">
+                            Migrated services, maintained infrastructure and built features across a
+                            <code>TypeScript</code> microservice estate on <code>Azure</code>, including data pipelines
+                            into third-party vendor APIs.
+                        </p>
                     </section>
 
                     <section id="cv-education">
                         <h2>Education</h2>
-                        <h3>Bachelor of Engineering with First Class Honours</h3>
-                        <p class="meta">2018 - 2021 :: Victoria University of Wellington</p>
+                        <hgroup>
+                            <h3>Bachelor of Engineering with First Class Honours</h3>
+                            <p class="meta">2018 - 2021 :: Victoria University of Wellington</p>
+                        </hgroup>
                         <ul>
                             <li>
                                 <h4>Major:</h4>
