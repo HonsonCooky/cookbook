@@ -2,11 +2,9 @@
 :root {
     color-scheme: light dark;
     --font-sans:
-        "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
         sans-serif;
-    --font-title:
-        "IBM Plex Sans Condensed", Bahnschrift, "Avenir Next", Futura, "Gill Sans",
-        "Trebuchet MS", sans-serif;
+    --font-title: var(--font-sans);
     --font-mono:
         "IBM Plex Mono", ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono",
         "Segoe UI Mono", "Roboto Mono", Menlo, Consolas, "Liberation Mono",
