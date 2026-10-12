@@ -2,7 +2,7 @@
    Type scale (pt):   10 body + h4 / 12 h3 / 14 h2 / 24 h1 + role
    Spacing scale (em, relative to 10pt body): 1 = 0.25em, 2 = 0.5em, 3 = 1em, 4 = 1.5em
    Rules: entry title sits flush on its date line; date to list, h2 to body and bullet to bullet use
-   scale 2; skills row to row uses scale 1; entry to entry and header to body use scale 4; sections
+   scale 2; skills row to row uses scale 1; entry to entry uses scale 3; header to body uses scale 4; sections
    carry no padding, the flex column spaces them. */
 
 @page {
@@ -42,9 +42,8 @@
 .cv-header {
     display: grid;
     grid-template-columns: 1fr auto;
-    align-items: baseline;
+    align-items: center;
     column-gap: 2em;
-    row-gap: var(--cv-space-1);
     font-family: var(--font-title);
     line-height: 1.1;
     margin: 0 0 var(--cv-space-4) 0;
@@ -62,8 +61,16 @@
 }
 
 .cv-role {
+    display: block;
+    margin-top: var(--cv-space-1);
     font-size: 14pt;
     font-weight: 300;
+}
+
+.cv-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cv-space-2);
 }
 
 .cv-header a {
@@ -73,10 +80,6 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-}
-
-.cv-site {
-    grid-column: 2;
 }
 
 .cv-header a svg {
@@ -144,13 +147,11 @@
     margin: 0;
 }
 
-/* consecutive entries (job to job) */
-.cv-page :is(ul, .entry) + hgroup {
-    margin-top: var(--cv-space-4);
-}
-
+/* indented behind a quote bar, like a markdown blockquote */
 .cv-page .entry {
     margin: 0;
+    border-left: 2px solid var(--border);
+    padding-left: 1.2ch;
 }
 
 /* bullet titles: body face at body weight, so they read as part of the line */
@@ -259,5 +260,9 @@
     .cv-page h2,
     .cv-page code {
         border-bottom-color: #ccc;
+    }
+
+    .cv-page .entry {
+        border-left-color: #ccc;
     }
 }

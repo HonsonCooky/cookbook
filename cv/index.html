@@ -44,87 +44,91 @@
 
         <div class="cv-wrapper">
             <div class="cv-page">
-                <!-- grid, row by row: name | github, role | linkedin, (empty) | site -->
+                <!-- two columns, vertically centred: name over role | links stacked -->
                 <div class="cv-header">
-                    <h1>Harrison Cook</h1>
-                    <a href="https://github.com/HonsonCooky">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path
-                                fill="currentColor"
-                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                            /></svg
-                        >github.com/HonsonCooky
-                    </a>
-                    <span class="cv-role">Software Engineer</span>
-                    <a href="https://www.linkedin.com/in/honsoncooky">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path
-                                fill="currentColor"
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
-                            /></svg
-                        >linkedin.com/in/honsoncooky
-                    </a>
-                    <a class="cv-site" href="https://honsoncooky.github.io/cookbook/">
-                        <svg
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg
-                        >honsoncooky.github.io/cookbook
-                    </a>
+                    <div>
+                        <h1>Harrison Cook</h1>
+                        <span class="cv-role">Software Engineer</span>
+                    </div>
+                    <div class="cv-links">
+                        <a href="https://github.com/HonsonCooky">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    fill="currentColor"
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                /></svg
+                            >github.com/HonsonCooky
+                        </a>
+                        <a href="https://www.linkedin.com/in/honsoncooky">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    fill="currentColor"
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                                /></svg
+                            >linkedin.com/in/honsoncooky
+                        </a>
+                        <a href="https://honsoncooky.github.io/cookbook/">
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg
+                            >honsoncooky.github.io/cookbook
+                        </a>
+                    </div>
                 </div>
                 <div class="cv-body">
                     <section id="cv-about">
                         <h2>About</h2>
                         <p class="summary">
-                            Software engineering seems a strange place to end up, coming from what some would jest is a
-                            <q>singing cult</q>. Years on stage alongside friends and family left a mark I have never
-                            shaken: a desire to contribute to productions only made possible because of every person's
-                            contributions. A knack for calculus and a quiet fascination with technology sent me toward
-                            completing a Bachelor of Engineering at Victoria University. My career since has spanned a
-                            wide variety of environments, showing me how software delivers value, and the multitude of
-                            difficulties that come with it. Like a musician, I practice in my free time. Exploring,
-                            experimenting, and casually reinforcing the elements that enable me to make small
-                            improvements every day.
+                            Software engineering seems a strange place to end up, coming from what friends would jest is
+                            a <q>singing cult</q>. Years on stage in ambitious productions showed me how amazing things
+                            happen when everyone energetically contributes their small part. A knack for calculus pulled
+                            me toward a Bachelor of Engineering at Victoria University. From there came my 5+ years of
+                            building in the industry, learning how software delivers value and everything that gets in
+                            its way. My craft doesn't stop when work does; like a musician, I keep practising in my
+                            free time, lately by building my own game engines in <code>C</code> on <code>Raylib</code>.
+                            Every day is a chance to be better than yesterday, a challenge I relish.
                         </p>
                     </section>
 
                     <section id="cv-work">
-                        <h2>Work (Software Engineering)</h2>
+                        <h2>Work</h2>
                         <hgroup>
-                            <h3>Software Engineer - Splitting Point Studios</h3>
+                            <h3>Splitting Point Studios - <em>Software Engineer</em></h3>
                             <p class="meta">Sept 2025 - Present :: Remote, NZ</p>
                         </hgroup>
                         <p class="entry">
-                            Founding backend engineer. Took the studio's backend from speculative feature
-                            specifications to an in-house <code>Go</code> platform its games rely on today, using AI
-                            across the development cycle, from black-box drafts to review-only pipelines for the
-                            services that must not fail. Worked directly with the CEO, building past the spec where it
-                            paid off. Grew the backend from just me into a team, mentoring juniors and onboarding other
-                            teams onto our services.
+                            Founding backend engineer, building the in-house <code>Go</code> platform the studio's games
+                            run on from bare speculative specs. Working directly with the CEO, I pushed ideas past the
+                            brief where the bet paid off, and several of our most used tools began that way. AI runs
+                            through my whole cycle, from black-box drafts to review-only pipelines for services that
+                            must not fail. The backend has since grown from just me into a team I mentor.
                         </p>
                         <hgroup>
-                            <h3>Software Engineer - Xero</h3>
+                            <h3>Xero - <em>Software Engineer</em></h3>
                             <p class="meta">Aug 2024 - Sept 2025 :: Wellington, NZ</p>
                         </hgroup>
                         <p class="entry">
-                            Added features to a large, long-lived <code>C#</code> codebase without breaking what
-                            already worked, and contributed to the design of new <code>.NET Core</code> systems.
+                            Shipped features into a large, long-lived <code>C#</code> codebase without breaking what
+                            already worked, while helping design its <code>.NET Core</code> replacement as the legacy
+                            system stayed live. Also carried on-call for systems well outside my own squad, debugging
+                            unfamiliar code under pressure.
                         </p>
                         <hgroup>
-                            <h3>Software Engineer - Z Energy</h3>
+                            <h3>Z Energy - <em>Software Engineer</em></h3>
                             <p class="meta">Nov 2021 - Aug 2024 :: Wellington, NZ</p>
                         </hgroup>
                         <p class="entry">
-                            Migrated services, maintained infrastructure and built features across a
-                            <code>TypeScript</code> microservice estate on <code>Azure</code>, including data pipelines
-                            into third-party vendor APIs.
+                            Spent nearly three years in a team of 10-20 running a <code>TypeScript</code> microservice
+                            estate on <code>Azure</code>, where I migrated services, kept the infrastructure healthy and
+                            built features, among them data pipelines into third-party vendor APIs.
                         </p>
                     </section>
 
@@ -134,17 +138,10 @@
                             <h3>Bachelor of Engineering with First Class Honours</h3>
                             <p class="meta">2018 - 2021 :: Victoria University of Wellington</p>
                         </hgroup>
-                        <ul>
-                            <li>
-                                <h4>Major:</h4>
-                                Software Engineering
-                            </li>
-                            <li>
-                                <h4>Specialisation:</h4>
-                                Networked Applications
-                            </li>
-                            <li>Dean's List for Academic Excellence (2018, 2019, 2020, 2021)</li>
-                        </ul>
+                        <p class="entry">
+                            Majored in Software Engineering with a specialisation in Networked Applications.<br />
+                            Made the Dean's List for Academic Excellence every year.
+                        </p>
                     </section>
 
                     <section id="cv-skills">
