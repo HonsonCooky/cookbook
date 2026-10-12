@@ -134,11 +134,8 @@
     margin: 0;
 }
 
-/* entry title and its meta line, ruled underneath: lighter than the section rule (--border mixed into the
-   page colour), and only as wide as the longer of the two lines */
+/* entry title and its meta line, with a little breathing room before the entry */
 .cv-page hgroup {
-    width: fit-content;
-    border-bottom: 1px solid color-mix(in srgb, var(--border) 80%, var(--surface));
     padding-bottom: var(--cv-space-1);
     margin: var(--cv-space-3) 0 0 0;
 }
