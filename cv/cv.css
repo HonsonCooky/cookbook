@@ -75,6 +75,10 @@
     align-items: center;
 }
 
+.cv-site {
+    grid-column: 2;
+}
+
 .cv-header a svg {
     width: 1.1em;
     height: 1.1em;
